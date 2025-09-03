@@ -13,6 +13,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("გამარჯობა! მე ვარ შენი პირადი GPT 🤖. მომწერე რამე და გიპასუხებ.")
 
+app.add_handler(CommandHandler("start", start))
 # ფუნქცია შეტყობინებებზე პასუხისთვის
 async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_message = update.message.text
@@ -41,3 +42,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
